@@ -8,4 +8,4 @@ Ride your bicycle in GTA V
 ### TODO
 - Controlling the GTA V vehicle from the program.
 - Connect to  ANT+ or Bluetooth sensors for moving the bicycle.
-- Integrate with AI for self rinding.
+- Integrate with AI for self riding.
