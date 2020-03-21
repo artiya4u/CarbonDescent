@@ -1,0 +1,39 @@
+{
+	"name": "carbon-descent",
+	"version": "0.0.1",
+	"description": "Ride your real bicycle in GTA V",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"GTAV",
+		"bicycle",
+		"virtual"
+	],
+	"author": {
+		"name": "Artiya Thinkumpang",
+		"email": "artiya4u@gmail.com"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/artiya4u/CarbonDescent.git"
+	},
+	"bugs": "https://github.com/artiya4u/CarbonDescent/issues",
+	"dependencies": {
+		"ant-plus": "^0.1.24",
+		"vjoy": "^1.1.0"
+	},
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-config-standard": "^10.2.1",
+		"eslint-plugin-import": "^2.8.0",
+		"eslint-plugin-node": "^5.2.1",
+		"eslint-plugin-promise": "^3.6.0",
+		"eslint-plugin-standard": "^3.0.1"
+	}
+}
