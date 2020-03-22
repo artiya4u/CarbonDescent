@@ -11,6 +11,8 @@ ws.on('open', function open () {
     },
   };
   ws.send(JSON.stringify(userDataMessage));
+
+
 });
 
 ws.on('message', function incoming (data) {
