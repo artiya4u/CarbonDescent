@@ -1,10 +1,14 @@
 const yargs = require('yargs');
 const WebSocket = require('ws');
+const qrcode = require('qrcode-terminal');
+const utils = require('./utils');
+
 const control = require('./control');
 const sensors = require('./sensors');
 
+const wsPort = 8088;
 const wss = new WebSocket.Server({
-  port: 8088,
+  port: wsPort,
   perMessageDeflate: {
     zlibDeflateOptions: {
       // See zlib defaults.
@@ -47,16 +51,17 @@ sensors.start();
 
 wss.on('connection', function connection (ws) {
   ws.on('message', function incoming (message) {
-    console.log('received: %s', message);
-    message = JSON.parse(message);
-    if (message.type !== undefined) {
-      if (message.type === 'user' && message.user !== undefined) {
-        // User data e.g. weight, age and wheel circumference
-      } else if (message.type === 'steering') {
-        control.steer(message.value);
+    try {
+      console.log('received: %s', message);
+      message = JSON.parse(message);
+      if (message.type !== undefined) {
+        if (message.type === 'user' && message.user !== undefined) {
+          // User data e.g. weight, age and wheel circumference
+        } else if (message.type === 'steering') {
+          control.steer(message.value);
+        }
       }
-    } else {
-      console.error('Not supported message:', message);
+    } catch (e) {
     }
   });
 
@@ -65,3 +70,7 @@ wss.on('connection', function connection (ws) {
     ws.send(JSON.stringify(data));
   });
 });
+
+let serverAddress = `ws://${utils.localIpAddress()}:${wsPort}/`;
+console.log('SERVER URL:', serverAddress);
+qrcode.generate(serverAddress);

@@ -4,6 +4,7 @@
 	"description": "Ride your real bicycle in GTA V",
 	"main": "app.js",
 	"scripts": {
+		"start": "node app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
@@ -26,7 +27,7 @@
 	"bugs": "https://github.com/artiya4u/CarbonDescent/issues",
 	"dependencies": {
 		"ant-plus": "^0.1.24",
-		"noble": "^1.9.1",
+		"qrcode-terminal": "^0.12.0",
 		"vjoy": "^1.1.0",
 		"ws": "^7.2.3",
 		"yargs": "^15.3.1"
