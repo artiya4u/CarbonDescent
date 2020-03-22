@@ -2,7 +2,7 @@
 Ride your bicycle in GTA V
 
 ### Features
-- Move the bicycle (or other vehicle) from ANT+ speed or power sensor.
+- Move the bicycle from ANT+ speed or power sensor.
 - Carbon Descent mobile app for steering and monitor power, cadence and heart rate.
 
 ### Setting up (Do this once)
@@ -27,5 +27,5 @@ _Xbox360ce is a gamepad emulator that we will need in order to route control fro
 - Open the app and connect the sensors, speed or power sensor is required, heart rate and cadence sensors are optional.
 - Scan QR code from the web page to pair the Carbon Descent mobile app and setting up you profile (Weight, wheel circumference).
 - Mount your phone on the real bicycle and press the button to set front direction in the mobile app.
-- Open the GTA V game to story mode and get on a bicycle (on vehicle) you like.
+- Open the GTA V game to story mode and get on a bicycle in game (Can buy it in a website from phone).
 - Ride your real bike on a trainer and don't forget to turn on your fan on and get some drink and food. RIDE ON!
