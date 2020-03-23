@@ -59,6 +59,10 @@ wss.on('connection', function connection (ws) {
           // User data e.g. weight, age and wheel circumference
         } else if (message.type === 'steering') {
           control.steer(message.value);
+        } else if (message.type === 'move') {
+          control.move(message.value);
+        } else if (message.type === 'break') {
+          control.move();
         }
       }
     } catch (e) {

@@ -4,6 +4,7 @@ const steerMax = 1.0;
 const minMoveSpeed = 25;
 const control = {
   lastMove: Date.now(),
+  isBreak: false,
 };
 if (!vJoy.isEnabled()) {
   console.error('vJoy is not enabled.');
@@ -39,13 +40,21 @@ control.move = function (speed) {
   // When idle
   setTimeout(async function () {
     if (Date.now() - control.lastMove >= 3000) {
-      console.log('break');
-      device.buttons[1].set(false);
-      device.axes.Z.set(normalizeJoystickInput(-1) + 1);
-      await sleep(100);
-      device.axes.Z.set(normalizeJoystickInput(0));
+      await control.break();
     }
   }, 5000);
+};
+
+control.break = async function () {
+  if (!control.isBreak) {
+    console.log('break');
+    control.isBreak = true;
+    device.buttons[1].set(false);
+    device.axes.Z.set(normalizeJoystickInput(-1) + 1);
+    await sleep(200);
+    device.axes.Z.set(normalizeJoystickInput(0));
+    control.isBreak = false;
+  }
 };
 
 module.exports = control;
