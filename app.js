@@ -76,4 +76,4 @@ wss.on('connection', function connection (ws) {
 
 let serverAddress = `ws://${utils.localIpAddress()}:${wsPort}/`;
 qrcode.generate(serverAddress);
-console.log('SERVER URL:', serverAddress);
+console.log('SERVER URL=>', serverAddress);

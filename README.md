@@ -1,13 +1,13 @@
-# Carbon Descent
-Ride your bicycle in GTA V
+# CarbonDescent
+Ride your real bicycle in GTA V
 
 ### Features
-- Move the bicycle from ANT+ speed or power sensor.
-- Carbon Descent mobile app for steering and monitor power, cadence and heart rate.
+- Move the bicycle from ANT+ speed sensor.
+- CarbonDescent mobile app for steering and monitor speed, cadence and heart rate.
 
 ### Setting up (Do this once)
 - Install [NodeJS 12+](https://nodejs.org/) on your Windows Machine.
-- Use [Zadig](http://sourceforge.net/projects/libwdi/files/zadig/) to install the WinUSB driver for your USB device.
+- Use [Zadig](http://sourceforge.net/projects/libwdi/files/zadig/) to install the WinUSB driver for your ANT+ USB stick. Open Zadig and goto menu "Options" select "List All Device", find "ANT USBStick2". Select "WinUS" and press install driver button.
 - Copy files in `controller` to the GTA V game directory.
 - Install Vjoy [Download the installer](https://sourceforge.net/projects/vjoystick/) and run it.
 #### Xbox360ce setup
@@ -19,13 +19,17 @@ _Xbox360ce is a gamepad emulator that we will need in order to route control fro
 * Open the x360ce.ini and replace everything from `AxisToDPadDeadZone` down with [config](https://gist.githubusercontent.com/crizCraig/f680f65653641412eba28c3c47421bcf/raw/4abd3be3802555f57d96389bf0a189dad8cd90de/x360ce.ini)
 * Save the file and reopen xbox360ce_x64.exe
 - Press shift+right click on this directory in the file explore to open the command prompt and enter command `npm install`.
-- Download the Carbon Descent mobile app on store.
+- Download the [Expo Client application](https://expo.io/tools#client) on your phone and get CarbonDescent app from https://expo.io/@artiya4u/carbon-descent .
 
-### Starting Carbon Descent 
+### Starting CarbonDescent 
 - Connect the ANT+ USB stick to your computer and keep the stick close to your sensors.
 - Press shift and right click on this directory in the file explore to open the command prompt and enter command  `npm start`.
-- Open the app and connect the sensors, speed or power sensor is required, heart rate and cadence sensors are optional.
-- Scan QR code from the web page to pair the Carbon Descent mobile app and setting up you profile (Weight, wheel circumference).
-- Mount your phone on the real bicycle and press the button to set front direction in the mobile app.
-- Open the GTA V game to story mode and get on a bicycle in game (Can buy it in a website from phone).
+- The server will automatic connect the ANT+ sensors nearby, speed sensor is required, heart rate and cadence sensors are optional.
+- Mount your phone on the real bicycle handlebar.
+- Open the app press "CONNECT SERVER" button and enter the SERVER URL from the console to connect the mobile app to server.
+- Open the GTA V game to story mode and get on a bicycle in game (Can buy it from "Pedal and Metal Cycles" website on phone).
 - Ride your real bike on a trainer and don't forget to turn on your fan on and get some drink and food. RIDE ON!
+
+### TODOs
+-[ ] Automatic search for server.
+-[ ] App icon.
