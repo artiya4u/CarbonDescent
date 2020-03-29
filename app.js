@@ -6,7 +6,7 @@ const utils = require('./utils');
 const control = require('./control');
 const sensors = require('./sensors');
 
-const wsPort = 8088;
+const wsPort = 48088;
 const wss = new WebSocket.Server({
   port: wsPort,
   perMessageDeflate: {
