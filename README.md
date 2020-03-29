@@ -26,10 +26,10 @@ _Xbox360ce is a gamepad emulator that we will need in order to route control fro
 - Press shift and right click on this directory in the file explore to open the command prompt and enter command  `npm start`.
 - The server will automatic connect the ANT+ sensors nearby, speed sensor is required, heart rate and cadence sensors are optional.
 - Mount your phone on the real bicycle handlebar.
-- Open the app press "CONNECT SERVER" button and enter the SERVER URL from the console to connect the mobile app to server.
+- Open the app, it should automatic connect to the server, to manually update server's connection, press "SERVER CONNECTION" button and enter the SERVER URL from the console.
 - Open the GTA V game to story mode and get on a bicycle in game (Can buy it from "Pedal and Metal Cycles" website on phone).
-- Ride your real bike on a trainer and don't forget to turn on your fan on and get some drink and food. RIDE ON!
+- Press "GO" Button to set center of the steering and ride your real bike on a trainer and don't forget to turn on your fan on and get some drink and food. RIDE ON!
 
 ### TODOs
--[ ] Automatic search for server.
--[ ] App icon.
+-[X] Automatic search for the server.
+-[X] App icon.
