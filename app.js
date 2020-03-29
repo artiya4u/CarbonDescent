@@ -50,9 +50,8 @@ sensors.addSensorsListener(function (data) {
 sensors.start();
 
 wss.on('connection', function connection (ws) {
-  ws.on('message', function incoming (message) {
+  ws.on('message', async function incoming (message) {
     try {
-      console.log('received: %s', message);
       message = JSON.parse(message);
       if (message.type !== undefined) {
         if (message.type === 'user' && message.user !== undefined) {
@@ -62,7 +61,7 @@ wss.on('connection', function connection (ws) {
         } else if (message.type === 'move') {
           control.move(message.value);
         } else if (message.type === 'break') {
-          control.move();
+          await control.break();
         }
       }
     } catch (e) {
@@ -76,5 +75,5 @@ wss.on('connection', function connection (ws) {
 });
 
 let serverAddress = `ws://${utils.localIpAddress()}:${wsPort}/`;
-console.log('SERVER URL:', serverAddress);
 qrcode.generate(serverAddress);
+console.log('SERVER URL:', serverAddress);
