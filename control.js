@@ -1,10 +1,11 @@
 const { vJoy, vJoyDevice } = require('vjoy');
 const steerMin = -1.0;
 const steerMax = 1.0;
-const minMoveSpeed = 25;
+
 const control = {
   lastMove: Date.now(),
   isBreak: false,
+  minMoveSpeed: 25,
 };
 if (!vJoy.isEnabled()) {
   console.error('vJoy is not enabled.');
@@ -30,7 +31,7 @@ control.move = function (speed) {
   console.log(speed);
   control.lastMove = Date.now();
   // TODO make this realistic
-  if (speed > minMoveSpeed) {
+  if (speed >= this.minMoveSpeed) {
     device.buttons[1].set(true); // Press A button on controller
     console.log('pedal');
   } else {
